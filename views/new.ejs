@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<section class="form-container">
+    <div class="form-header">
+        <h1>Create a New Blog Post</h1>
+        <p>Draft your thoughts below. Once published, it will instantly appear on the home feed.</p>
+    </div>
+
+    <form action="/posts" method="POST" class="blog-form">
+        
+        <div class="form-group">
+            <label for="postTitle">Post Title</label>
+            <input 
+                type="text" 
+                id="postTitle" 
+                name="postTitle" 
+                placeholder="e.g., Reflections on Minimalist Code" 
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="postContent">Content Body</label>
+            <textarea 
+                id="postContent" 
+                name="postContent" 
+                rows="10" 
+                placeholder="Type or paste your markdown/text content here..." 
+                required
+            ></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Publish Post</button>
+            <a href="/" class="btn-cancel">Cancel</a>
+        </div>
+
+    </form>
+</section>
+
+<%- include('partials/footer') %>

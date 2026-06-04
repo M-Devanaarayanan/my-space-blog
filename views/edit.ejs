@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<section class="form-container">
+    <div class="form-header">
+        <h1>Edit Your Blog Post</h1>
+        <p>Make your adjustments below and save to update the live feed.</p>
+    </div>
+
+    <form action="/posts/<%= post.id %>/update" method="POST" class="blog-form">
+        
+        <div class="form-group">
+            <label for="postTitle">Post Title</label>
+            <input 
+                type="text" 
+                id="postTitle" 
+                name="postTitle" 
+                value="<%= post.title %>" 
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="postContent">Content Body</label>
+            <textarea 
+                id="postContent" 
+                name="postContent" 
+                rows="10" 
+                required
+            ><%= post.content %></textarea>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-submit">Save Changes</button>
+            <a href="/" class="btn-cancel">Cancel</a>
+        </div>
+
+    </form>
+</section>
